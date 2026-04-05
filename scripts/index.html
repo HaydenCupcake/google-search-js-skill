@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+window['ai_edge_gallery_get_result'] = async (data) => {
+    try {
+        const jsonData = JSON.parse(data);
+        const query = jsonData.query || "";
+
+        if (!query) {
+            return JSON.stringify({ error: "No search query provided." });
+        }
+
+        const searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(query);
+
+        return JSON.stringify({
+            result: "Showing Google Search results for: " + query,
+            webview: {
+                url: searchUrl,
+                aspectRatio: 1.5
+            }
+        });
+    } catch (e) {
+        return JSON.stringify({ error: "Search failed: " + e.message });
+    }
+};
+</script>
+</head>
+<body></body>
+</html>
