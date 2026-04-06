@@ -12,10 +12,10 @@ window['ai_edge_gallery_get_result'] = async (data) => {
             return JSON.stringify({ error: "No search query provided." });
         }
 
-        const searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(query);
+        const searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(query) + "&udm=50";
 
         return JSON.stringify({
-            result: "Showing Google Search results for: " + query,
+            result: "Showing Google AI Mode results for: " + query,
             webview: {
                 url: searchUrl,
                 aspectRatio: 0.5625
