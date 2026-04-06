@@ -18,7 +18,7 @@ window['ai_edge_gallery_get_result'] = async (data) => {
             result: "Showing Google Search results for: " + query,
             webview: {
                 url: searchUrl,
-                aspectRatio: 1.5
+                fullscreen: true
             }
         });
     } catch (e) {
