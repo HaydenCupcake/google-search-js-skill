@@ -17,8 +17,7 @@ window['ai_edge_gallery_get_result'] = async (data) => {
         return JSON.stringify({
             result: "Showing Google Search results for: " + query,
             webview: {
-                url: searchUrl,
-                fullscreen: true
+                url: searchUrl
             }
         });
     } catch (e) {
