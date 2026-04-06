@@ -1,3 +1,4 @@
+---
 name: google-search
 description: Search Google and display the results. Use this skill when the user wants to search for something on Google or look something up online.
 metadata:
